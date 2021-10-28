@@ -1,0 +1,266 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%);
+  --widthBadge: 22.375rem;
+  --heightBadge: 33.75rem;
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*O body é o elemento no nosso documento responsável por ser o container de tudo que é conteúdo do site. */
+body {
+  display: grid;
+  place-items: normal center;
+  background-image: url(images/background.png);
+  background-size: cover;
+}
+
+#faixa {
+  position: relative;
+  z-index: 60;
+}
+
+.glassEffect {
+  width: var(--widthBadge);
+  height: var(--heightBadge);
+  position: absolute;
+  top: 128px;
+  border-radius: 1rem;
+  background-color: rgba(126, 126, 126, 0.212);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.411);
+  z-index: 0;
+}
+
+main {
+  background: url(images/badge.png);
+  width: var(--widthBadge);
+  height: var(--heightBadge);
+  border-radius: 1rem;
+  opacity: 1;
+  z-index: 5;
+  position: absolute;
+  top: 128px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--grey);
+}
+
+.avatar {
+  width: auto 0;
+  margin: 4.6rem auto 0;
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -69px;
+  left: -29px;
+  z-index: 1;
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  margin-top: 1rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap: 0.75rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#userLink > span:hover {
+  color: rgb(80, 80, 80);
+  transition: 0.5s;
+}
+
+p {
+  margin-top: 2rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.build {
+  font-weight: 700;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #ff008e, #ffcd1e);
+}
+
+ul {
+  margin-top: 2rem;
+
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  gap: 0.5rem;
+
+  justify-content: center;
+}
+
+li img {
+  border-radius: 0.2rem;
+  opacity: 0.6;
+}
+
+ul > li > a > img:hover {
+  box-shadow: rgb(214, 201, 214) 0 4px 4px;
+  transition: all 0.4s linear;
+  margin-top: -0.3rem;
+  border-radius: 40%;
+}
+
+#userLink > img:hover {
+  box-shadow: rgb(214, 201, 214) 0 4px 4px;
+  transition: all 0.4s linear;
+  margin-top: -0.3rem;
+  border-radius: 40%;
+}
+
+/***********************
+******** MODAL *********
+************************/
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(73, 71, 71, 0.416);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: var(--widthBadge);
+  height: var(--heightBadge);
+  background: #121214;
+  text-align: center;
+  top: 128px;
+  position: absolute;
+  z-index: 1;
+  border-radius: 1rem;
+  border: 2px solid #121214;
+}
+.modal p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  margin-top: 3rem;
+  color: #a8a8b3;
+  font-size: 1.2rem;
+}
+
+/************************************/
+.formulario {
+  margin-top: 2rem;
+  display: block;
+}
+.campo {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.campo img {
+  width: 10%;
+  padding: 0 10px;
+}
+.campo input {
+  font-size: 1rem;
+  margin: 5px 0;
+  padding: 0.8rem;
+  width: 12rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(39, 39, 39);
+  color: #ffcd1e;
+}
+.campo input::placeholder {
+  color: #7f7f867a;
+}
+
+i {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: rgba(103, 103, 103, 0.56);
+}
+
+button {
+  margin-top: 3rem;
+  padding: 0.8rem;
+  width: 70%;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  background-color: #ffcd1e;
+  color: #09090a;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff7a29;
+}
+
+.socialInput {
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 50%;
+}

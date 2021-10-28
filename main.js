@@ -18,14 +18,6 @@ submit.addEventListener('click', function (e) {
   let getInstagram = document.querySelector('#getInstagram').value
   let getTwitter = document.querySelector('#getTwitter').value
 
-  // const LinksSocialMedia = {
-  //   github: 'Lucas-Mororo',
-  //   youtube: '',
-  //   facebook: 'profile.php?id=100004501296743',
-  //   instagram: 'lucasmmartinss_',
-  //   twitter: 'Lcmororo_'
-  // }
-
   const LinksSocialMedia = {
     github: getGitHub,
     youtube: getYoutube,

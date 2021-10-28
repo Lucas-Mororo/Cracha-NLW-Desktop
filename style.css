@@ -15,7 +15,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/*O body é o elemento no nosso documento responsável por ser o container de tudo que é conteúdo do site. */
 body {
   display: grid;
   place-items: normal center;
@@ -164,9 +163,6 @@ ul > li > a > img:hover {
   border-radius: 40%;
 }
 
-/***********************
-******** MODAL *********
-************************/
 .modal-overlay {
   width: 100%;
   height: 100%;
@@ -205,7 +201,6 @@ ul > li > a > img:hover {
   font-size: 1.2rem;
 }
 
-/************************************/
 .formulario {
   margin-top: 2rem;
   display: block;
